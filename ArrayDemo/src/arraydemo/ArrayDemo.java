@@ -21,7 +21,7 @@ public class ArrayDemo {
         // the number of elements we want to hold
         final int _arraySize = 4;
 
-// our array declaration
+        // our array declaration
         String[] stringArray = new String[_arraySize];
 
         for (int i = 0; i < _arraySize; i++) {
