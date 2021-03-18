@@ -18,7 +18,7 @@ public class Hourglass {
 
 // Returns maximum sum of 
 // hour glass in ar[][]
-    static int findMaxSum(int[][] matriz) {
+    static int findMaxSum(int[][] arrItem) {
         if (ROW < 3 || COLUMN < 3) {
             return -1;
         }
@@ -31,10 +31,10 @@ public class Hourglass {
             for (int j = 0; j < COLUMN - 2; j++) {
                 // Considering mat[i][j] as top 
                 // left cell of hour glass.
-                int sum = (matriz[i][j] + matriz[i][j + 1]
-                        + matriz[i][j + 2]) + (matriz[i + 1][j + 1])
-                        + (matriz[i + 2][j] + matriz[i + 2][j + 1]
-                        + matriz[i + 2][j + 2]);
+                int sum = (arrItem[i][j] + arrItem[i][j + 1]
+                        + arrItem[i][j + 2]) + (arrItem[i + 1][j + 1])
+                        + (arrItem[i + 2][j] + arrItem[i + 2][j + 1]
+                        + arrItem[i + 2][j + 2]);
 
                 // If previous sum is less then 
                 // current sum then update
