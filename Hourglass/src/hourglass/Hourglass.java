@@ -18,7 +18,7 @@ public class Hourglass {
 
 // Returns maximum sum of 
 // hour glass in ar[][]
-    static int findMaxSum(int[][] arrayTwoDimensional) {
+    static int findMaxSum(int[][] matriz) {
         if (ROW < 3 || COLUMN < 3) {
             return -1;
         }
@@ -31,10 +31,10 @@ public class Hourglass {
             for (int j = 0; j < COLUMN - 2; j++) {
                 // Considering mat[i][j] as top 
                 // left cell of hour glass.
-                int sum = (arrayTwoDimensional[i][j] + arrayTwoDimensional[i][j + 1]
-                        + arrayTwoDimensional[i][j + 2]) + (arrayTwoDimensional[i + 1][j + 1])
-                        + (arrayTwoDimensional[i + 2][j] + arrayTwoDimensional[i + 2][j + 1]
-                        + arrayTwoDimensional[i + 2][j + 2]);
+                int sum = (matriz[i][j] + matriz[i][j + 1]
+                        + matriz[i][j + 2]) + (matriz[i + 1][j + 1])
+                        + (matriz[i + 2][j] + matriz[i + 2][j + 1]
+                        + matriz[i + 2][j + 2]);
 
                 // If previous sum is less then 
                 // current sum then update
@@ -47,20 +47,20 @@ public class Hourglass {
 
     public static void main(String[] args) {
         // TODO code application logic here
-        int[][] mat = 
+        int[][] arrayTwoDimensional = 
         {{1, 2, 3, 0, 0},
         {0, 0, 0, 0, 0},
         {2, 1, 4, 0, 0},
         {0, 0, 0, 0, 0},
         {1, 1, 0, 1, 0}};
         
-        int res = findMaxSum(mat);
+        int result = findMaxSum(arrayTwoDimensional);
         
-        if (res == -1) {
+        if (result == -1) {
             System.out.println("Not possible");
         } else {
             System.out.println("Maximum sum of hour glass = "
-                    + res);
+                    + result);
         }
     }
 
