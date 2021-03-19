@@ -13,7 +13,7 @@ public class Cat extends Animal {
     }
     
     public void prance() {
-        System.out.println("A cat is prancing");
+        System.out.println("A cat is prance");
     }
     
 }
