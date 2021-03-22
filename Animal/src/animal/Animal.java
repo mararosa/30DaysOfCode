@@ -15,7 +15,7 @@ public class Animal {
     }
     
     public void eat() {
-        System.out.println("An anmal is eating");
+        System.out.println("An animal is eating");
     }
 
     public static void main(String[] args) {
@@ -32,6 +32,10 @@ public class Animal {
         c.eat();
         d.run();
         c.prance();
+        
+        //What happens if...
+        //Dog o = new Animal(3);
+        //Animal o = new Dog();
     }
     
 }
