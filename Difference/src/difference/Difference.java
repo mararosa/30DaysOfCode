@@ -5,6 +5,8 @@
  */
 package difference;
 
+import java.util.Arrays;
+
 /**
  *
  * @author mararosa
@@ -13,8 +15,8 @@ public class Difference {
 
     private int[] elements;
     public int maximumDifference;
-    public int minimumValue = Integer.MAX_VALUE ;
-    public int maxValue = Integer.MIN_VALUE ;
+    public int minimumValue = Integer.MAX_VALUE;
+    public int maxValue = Integer.MIN_VALUE;
 
     // Add your code here
     Difference(int[] arr) {
@@ -26,8 +28,14 @@ public class Difference {
             maxValue = Math.max(maxValue, elements[i]);
             minimumValue = Math.min(minimumValue, elements[i]);
         }
-        maximumDifference = (maxValue - minimumValue);
-        System.out.println(maximumDifference);
+        maximumDifference = Math.abs(maxValue - minimumValue);
+        System.out.println("computeDifference: " + maximumDifference);
+    }
+
+    void computeDifferenceII() {
+        Arrays.sort(elements);
+        maximumDifference = Math.abs(elements[(elements.length - 1)] - elements[0]);
+        System.out.println("computeDifferenceII: " + maximumDifference);
     }
 
     public static void main(String[] args) {
@@ -35,6 +43,7 @@ public class Difference {
         int[] arr = {5, 2, 9, 1, 3};
         Difference difference = new Difference(arr);
         difference.computeDifference();
+        difference.computeDifferenceII();
     }
 
 }
