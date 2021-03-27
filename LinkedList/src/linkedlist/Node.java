@@ -3,6 +3,7 @@ package linkedlist;
 
 public class Node {
     Node next; //reference
+//    Node previous;
     int data; //data
     
     public Node(int newData) {
