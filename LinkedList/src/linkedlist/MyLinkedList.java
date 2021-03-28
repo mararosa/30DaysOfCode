@@ -62,7 +62,7 @@ public class MyLinkedList {
     // remove from the back of the list
     public void remodeNode() {
         Node current = head;
-        while(current.getNext().getNext() != null) {
+        while (current.getNext().getNext() != null) {
             current = current.getNext();
         }
         current.setNext(null);
@@ -78,6 +78,20 @@ public class MyLinkedList {
         System.out.println(linkedList);
         linkedList.addFirst("try first");
         System.out.println(linkedList);
+
+        //Training
+        LinkedList<String> mine = new LinkedList<String>();
+        mine.add("First");
+        mine.add("Second");
+        mine.addFirst("Third");
+        mine.addLast("Fourth");
+        mine.add(2, "Fifth");
+        System.out.println(mine);
+        System.out.println(mine.get(2));
+        mine.clear();
+        System.out.println(mine);
+        mine.add("Sixth");
+        System.out.println(mine);
     }
 
 }
