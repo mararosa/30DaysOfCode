@@ -34,7 +34,7 @@ public class Stacky {
     }
     // pop an item
     public int pop() {
-        return (int) stack.removeFirst();
+        return (int) stack.removeLast();
     }
     // Peek at the first item
     public int peek() {
