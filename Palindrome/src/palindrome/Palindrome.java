@@ -77,14 +77,17 @@ public class Palindrome {
 
         // Pop/Dequeue the chars at the head of both data structures and compare them:
         boolean isPalindrome = true;
-        for (int i = 0; i < StringToCharArray.length/2; i++) {
+        for (int i = 0; i < StringToCharArray.length; i++) {
             if (p.dequeueCharacter() != p.popCharacter()) {
                 isPalindrome =  false;
                 System.out.println(p.getStack());
                 System.out.println(p.getQueue());
                 break;
             }
+      
         }
+                   System.out.println("getStack"+p.getStack());
+                System.out.println("getQueue"+p.getQueue());
         
         System.out.println("The word, " + input + ", is " + ((!isPalindrome) ? "not a "
                 + "palindrome." : "a palindrome."));  
