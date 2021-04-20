@@ -1,27 +1,33 @@
-package linkedlist;
+/*
+ * Copyright 2021 mararosa
+ */
+package genericlinkedlist;
 
 import java.util.LinkedList;
 
-public class MyLinkedList {
+/**
+ * @author mararosa
+ */
+public class GenericLinkedList<D> {
 
-    Node head; //have a reference to the head
+    GenericNode<D> head; //have a reference to the head
     int count; //need to know we're going to be at the end of the list
 
-    public MyLinkedList() {
+    public GenericLinkedList() {
         head = null;
         count = 0;
     }
 
-    public MyLinkedList(Node newHead) {
+    public GenericLinkedList(GenericNode<D> newHead) {
         head = newHead;
         count = 1;
     }
 
     //add
-    public void addNode(int newData) {
-        Node temporaryNode = new Node(newData);
+    public void add(D newData) {
+        GenericNode<D> temporaryNode = new GenericNode(newData);
         if (head != null) {
-            Node currentNode = head;
+            GenericNode currentNode = head;
             while (currentNode.getNext() != null) {
                 currentNode = currentNode.getNext();
             }
@@ -33,11 +39,16 @@ public class MyLinkedList {
     }
 
     //get
-    public int getNode(int index) {
-        if (index <= 0 || index > count) {
-            return -1;
+    public D get(int index) {
+        try {
+            if (index <= 0 || index > count) {
+                System.out.println("need change. because cannot return -1 anymore");
+            }
+        } catch (Exception e) {
+            System.out.println("Exception thrown " + e);
         }
-        Node currentNode = head;
+
+        GenericNode<D> currentNode = head;
         for (int i = 1; i < index; i++) {
             currentNode = currentNode.getNext();
         }
@@ -45,7 +56,7 @@ public class MyLinkedList {
     }
 
     //size
-    public int linkedListSize() {
+    public int size() {
         return count;
     }
 
@@ -60,8 +71,8 @@ public class MyLinkedList {
 
     //remove
     // remove from the back of the list
-    public void remodeNode() {
-        Node current = head;
+    public void remove() {
+        GenericNode<D> current = head;
         while (current.getNext().getNext() != null) {
             current = current.getNext();
         }
@@ -71,14 +82,14 @@ public class MyLinkedList {
 
     public static void main(String[] args) {
         // TODO code application logic here
-        MyLinkedList myLinkedList = new MyLinkedList();
-        myLinkedList.addNode(1);
-        myLinkedList.addNode(2);
-        myLinkedList.addNode(3);
-        System.out.println(myLinkedList.getNode(10));
-        System.out.println("Size " + myLinkedList.linkedListSize());
-        myLinkedList.remodeNode();
-        System.out.println("Size " + myLinkedList.linkedListSize());
+        GenericLinkedList linkedList = new GenericLinkedList();
+        linkedList.add(1);
+        linkedList.add(2);
+        linkedList.add(3);
+        System.out.println(linkedList.get(2));
+        System.out.println("Size " + linkedList.size());
+        linkedList.remove();
+        System.out.println("Size " + linkedList.size());
 
 //        LinkedList<String> linkedList = new LinkedList<String>();
 //        linkedList.add("Yeah!");
@@ -102,5 +113,4 @@ public class MyLinkedList {
 //        mine.add("Sixth");
 //        System.out.println(mine);
     }
-
 }
