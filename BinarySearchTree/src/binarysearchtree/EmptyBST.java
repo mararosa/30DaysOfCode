@@ -32,6 +32,4 @@ public class EmptyBST<D extends Comparable> implements Tree<D> {
     public NonEmptyBST<D> add(D element) {
         return new NonEmptyBST<D>(element);
     }
-    
-    
 }
