@@ -114,7 +114,7 @@ public class TicTacToe {
         // check if  there's a winner on the board, ex: three X's in a rows three O's in a row
         boolean diagonalsAndMiddles = (rightDiagonal() || leftDiagonal() || middleRow() || secondCol()) && board[4] != '-';
         boolean topAndFirst = (topRow() || firstCol()) && board[0] != '-';
-        boolean bottomAndThird = (bottomRow() || thirdCol()) && board[8] != '-';
+        boolean bottomAndThird = (bottomRow() || thirdCol()) && board[8] != '0';
         // We save the winner at the correct position. Whatever the position was we saved up that charcter is the winner
         if (diagonalsAndMiddles) {
             this.winner = board[4];
